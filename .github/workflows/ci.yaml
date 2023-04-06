@@ -4,10 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       BRANCH:
-        description: 'Branch to run '
+        description: 'Branch to run'
         required: true
-        default: 'master'
-        type: choice
+        default: 'main'
   pull_request:
     branches:
       - main
