@@ -1,0 +1,14 @@
+name: ci
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    runs-on: ["ubuntu-latest", "self-hosted"]
+    steps:
+      - name: echo
+        run : |
+          source ci.sh
