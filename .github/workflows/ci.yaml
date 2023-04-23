@@ -34,3 +34,4 @@ jobs:
           git add .
           git commit -m "add test file"
           git push origin HEAD:test2
+          echo "test"
