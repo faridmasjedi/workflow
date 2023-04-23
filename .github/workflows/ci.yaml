@@ -33,4 +33,4 @@ jobs:
           echo "test" >> test.txt
           git add .
           git commit -m "add test file"
-          git push
+          git push origin HEAD:test2
