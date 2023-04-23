@@ -17,8 +17,33 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: echo
         run : |
           source ci.sh
           echo ${{ inputs.BRANCH }}
+      
+      - name: new commit on same branch
+        run: |
+          git config --global user.name "github bot"
+          git config --global user.email "githubbot@github.com"
+          touch test.txt
+          echo "test" >> test.txt
+          git add .
+          git commit -m "add test file"
+          git push origin HEAD:test2
+          echo "test"
+      
+      - name: git checkout to test1
+        uses: actions/checkout@v2
+        with:
+          ref: test1
+
+      - name: new commit on other branch
+        run: |
+          git config --global user.name "github bot"
+          git config --global user.email "githubbot@github.com"
+          git merge --no-ff origin/test2 -m "Merge test2 into test1"
+          git push origin HEAD:test1
