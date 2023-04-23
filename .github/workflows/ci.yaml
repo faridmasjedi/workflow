@@ -31,4 +31,4 @@ jobs:
           echo "test" >> test.txt
           git add .
           git commit -m "add test file"
-          git push origin ${ github.head_ref }
+          git push origin ${{ github.head_ref }}
