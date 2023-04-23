@@ -33,4 +33,4 @@ jobs:
           echo "test" >> test.txt
           git add .
           git commit -m "add test file"
-          git push origin origin/"${{ github.head_ref }}"
+          git push set-url origin ssh://git@github.com:faridmasjedi/workflow.git
