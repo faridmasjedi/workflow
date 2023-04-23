@@ -36,11 +36,14 @@ jobs:
           git push origin HEAD:test2
           echo "test"
       
+      - name: git checkout to test1
+        uses: actions/checkout@v2
+        with:
+          ref: test1
+
       - name: new commit on other branch
         run: |
           git config --global user.name "github bot"
           git config --global user.email "githubbot@github.com"
-          git branch -a
-          git checkout HEAD:test1
           git merge HEAD:test2
           git push origin HEAD:test1
