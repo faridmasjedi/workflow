@@ -40,10 +40,4 @@ jobs:
         run: |
           git config --global user.name "github bot"
           git config --global user.email "githubbot@github.com"
-          git checkout HEAD:test1
-          touch test.txt
-          echo "test" >> test.txt
-          git add .
-          git commit -m "add test file"
-          git push origin HEAD:test1
-          echo "test"
+          git push origin test2:test1
