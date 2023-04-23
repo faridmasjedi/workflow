@@ -40,4 +40,6 @@ jobs:
         run: |
           git config --global user.name "github bot"
           git config --global user.email "githubbot@github.com"
-          git push origin test2:test1
+          git checkout HEAD:test1
+          git merge HEAD:test2
+          git push origin HEAD:test1
