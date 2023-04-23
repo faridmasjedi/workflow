@@ -45,5 +45,5 @@ jobs:
         run: |
           git config --global user.name "github bot"
           git config --global user.email "githubbot@github.com"
-          git merge --no-ff test2 -m "Merge test2 into test1"
+          git merge --no-ff HEAD:test2 -m "Merge test2 into test1"
           git push origin HEAD:test1
