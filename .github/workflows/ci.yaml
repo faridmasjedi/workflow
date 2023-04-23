@@ -27,8 +27,8 @@ jobs:
       
       - name: new commit on same branch
         run: |
-          git config user.name github.bot
-          git config user.email githubbot@github.com
+          git config --global user.name "github bot"
+          git config --global user.email "githubbot@github.com"
           touch test.txt
           echo "test" >> test.txt
           git add .
