@@ -22,3 +22,13 @@ jobs:
         run : |
           source ci.sh
           echo ${{ inputs.BRANCH }}
+      
+      - name: new commit on same branch
+        run: |
+          git config user.name github.bot
+          git config user.email githubbot@github.com
+          touch test.txt
+          echo "test" >> test.txt
+          git add .
+          git commit -m "add test file"
+          git push origin ${ github.head_ref }
